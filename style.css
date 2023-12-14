@@ -1,0 +1,355 @@
+/* Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --grisClaro: #8c919d;
+    --grisOscuro: #434953;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo: #e40b0b;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--grisOscuro);
+    color: var(--negro);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.stiky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+.logo {
+    cursor: default;
+}
+
+/* Navegacion */
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--negro);
+    font-weight: 700;
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--rojo);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--negro);
+    display: none; /* para que no se vea el menu */
+}
+
+/* Contenido Banner */
+
+.imgfondo {
+    background-image: url(img/Banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 410px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-imgfondo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenido-imgfondo h1 {
+    color: var(--blanco);
+    font-size: 12rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.contenido-imgfondo p {
+    font-size: 2rem;
+    color: var(--blanco);
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+span {
+    font-size: 7rem;
+    color: var(--rojo);
+    margin-bottom: 5rem;
+}
+
+/* Boton */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--rojo);
+    border-radius: 4rem;
+    
+    font-size: 1.6rem;
+    color: var(--blanco);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+
+/* Contacto */
+.contacto h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--blanco);
+}
+
+.contacto form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacto form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contacto form .input-box input,
+.contacto form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--negro);
+    background: var(--blanco);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contacto form .input-box input {
+    width: 49%;
+}
+
+.contacto form textarea {
+    resize: none;
+}
+
+.contacto form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: var(--blanco);
+}
+
+.footer-text p {
+    font-size: 1rem;
+    color: var(--negro);
+    font-weight: 700;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--rojo);
+    border-radius: .8rem;
+    transition: .5rem ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--negro);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--rojo);
+}
+
+@media (max-width: 768px) {     
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .servicios {
+        padding-bottom: 7rem;
+    }
+
+    .productos {
+        padding-bottom: 7rem;
+    }
+
+    .contacto {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {     
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .imgfondo {
+        flex-direction: column;
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .contenido-imgfondo h3 {
+        font-size: 2.6rem; 
+    }
+
+    .contenido-imgfondo h1 {
+        font-size: 5rem;
+    }
+
+    .productos h2 {
+        margin-bottom: 3rem;
+    }
+
+    .productos-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .productos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contenido-imgfondo {
+        
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contacto form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px) {
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
